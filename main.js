@@ -1,7 +1,9 @@
+// thanks to Matt Zamora for helping me figure out some of the issues with table, alert and draw fucntion and especially colormatching function
 
-var tableRow = document.getElementsByTagName('tr');
-var tableCell = document.getElementsByTagName('td');
-var tableSlot = document.querySelectorAll('.slot');
+
+let tableRow = document.getElementsByTagName('tr');
+let tableCell = document.getElementsByTagName('td');
+let tableSlot = document.querySelectorAll('.slot');
 
 const playerTurn = document.querySelector('.player-turn');
 const reset = document.querySelector('.reset');
@@ -25,7 +27,7 @@ while (!player2) {
 
 player2Color = 'yellow';
 
-var currentPlayer = 1;
+let currentPlayer = 1;
 playerTurn.textContent = `${player1}'s turn!`;
 
 
@@ -60,7 +62,7 @@ function changeColor(event) {
                 playerTurn.textContent = `${player1}'s turn!`
                 if (horizontalCheck() || veritcalCheck() || diagonalCheck1() || diagonalCheck2()) {
                     playerTurn.textContent = `${player2} wins!`;
-                    playerTurn.style.color = player2Color;
+                    playerTurn.style.color = player1Color;
                     return (alert(`${player2} Wins!`));
                 } else if (drawCheck()) {
                     playerTurn.textContent = 'Draw!';
